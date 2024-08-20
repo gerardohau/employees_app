@@ -1,0 +1,72 @@
+<div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-1">
+                    ID
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    FIRST NAME
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    LAST NAME
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    DATE OF BIRTH
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    EMAIL
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    ADDRESS
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    COUNTRY
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    BIO
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    RATING
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @employees.each do |employee| %>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-1">
+                  <%= employee["id"] %>
+                </th>
+                <td class="px-6 py-4">
+                  <%= employee["first_name"] %>
+                </td>
+                <td class="px-6 py-4">
+                  <%= employee["last_name"] %>
+                </td>
+                <td class="px-6 py-4">
+                  <%= employee["date_of_birth"] %>
+                </td>
+                <td class="px-6 py-4">
+                  <%= employee["email"] %>
+                </td>
+                <td class="px-6 py-4">
+                  <%= employee["address"] %>
+                </td>
+                <td class="px-6 py-4">
+                  <%= employee["country"] %>
+                </td>
+                <td class="px-6 py-4">
+                  <ul class="list-decimal pl-5 space-y-2">
+                    <% employee["bio"].to_a.each do |element| %>
+                      <li><%= element %></li>
+                    <% end %>
+                  </ul>
+                </td>
+                <td class="px-6 py-4">
+                  <%= employee["rating"] %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+</div>
